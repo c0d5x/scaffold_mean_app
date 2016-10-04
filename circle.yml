@@ -7,3 +7,5 @@ dependencies:
     - gem install sass
     - npm install
 test:
+  override:
+    - npm test

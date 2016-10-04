@@ -4,10 +4,6 @@ machine:
 dependencies:
   pre:
     - npm install -g gulp-cli
-    - npm install -g bower
     - gem install sass
     - npm install
 test:
-  post:
-    - npm test
-

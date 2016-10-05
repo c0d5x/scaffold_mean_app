@@ -1,10 +1,12 @@
 machine:
   node:
-    version: latest
+    version: 6.7.0
 dependencies:
   pre:
+    - ls -l `which npm`
     - npm prune
     - npm install -g npm@latest
+    - ls -l `which npm`
     - npm install -g gulp-cli
     - gulp build
     - npm install --no-optional

@@ -15,11 +15,11 @@
     "modelsNeedle": "// Insert models below",
     "filters": {
       "js": true,
-      "babel": true,
+      "ts": true,
       "flow": false,
       "html": true,
       "sass": true,
-      "uirouter": true,
+      "ngroute": true,
       "bootstrap": true,
       "uibootstrap": true,
       "socketio": true,
@@ -31,10 +31,10 @@
       "googleAuth": true,
       "facebookAuth": true,
       "twitterAuth": true,
-      "mocha": true,
-      "jasmine": false,
+      "jasmine": true,
+      "mocha": false,
       "should": false,
-      "expect": true
+      "expect": false
     }
   },
   "generator-ng-component": {
@@ -47,15 +47,14 @@
     "moduleName": "",
     "modulePrompt": true,
     "filters": [
-      "uirouter",
-      "mocha",
-      "expect",
-      "uirouter",
+      "ngroute",
+      "jasmine",
+      "ngroute",
       "es6",
       "webpack"
     ],
     "extensions": [
-      "babel",
+      "ts",
       "js",
       "html",
       "scss"

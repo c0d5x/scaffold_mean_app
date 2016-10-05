@@ -38,19 +38,19 @@ module.exports = function makeWebpackConfig(options) {
         config.entry = {};
     } else {
         config.entry = {
-            app: './client/app/app.js',
-            polyfills: './client/polyfills.js',
+            app: './client/app/app.ts',
+            polyfills: './client/polyfills.ts',
             vendor: [
                 'angular',
                 'angular-animate',
                 'angular-aria',
                 'angular-cookies',
                 'angular-resource',
-
+                'angular-route',
                 'angular-sanitize',
                 'angular-socket-io',
                 'angular-ui-bootstrap',
-                'angular-ui-router',
+
                 'lodash'
             ]
         };
@@ -84,7 +84,10 @@ module.exports = function makeWebpackConfig(options) {
         };
     }
 
-
+    config.resolve = {
+        modulesDirectories: ['node_modules'],
+        extensions: ['', '.js', '.ts']
+    };
 
     if(TEST) {
         config.resolve = {
@@ -121,12 +124,7 @@ module.exports = function makeWebpackConfig(options) {
         sourceComments: false
     };
 
-    config.babel = {
-        shouldPrintComment(commentContents) {
-            // keep `/*@ngInject*/`
-            return /@ngInject/.test(commentContents);
-        }
-    }
+
 
     // Initialize module
     config.module = {
@@ -203,28 +201,12 @@ module.exports = function makeWebpackConfig(options) {
     };
 
     config.module.postLoaders = [{
-        test: /\.js$/,
+        test: /\.ts$/,
         loader: 'ng-annotate?single_quotes'
     }];
 
-    // ISPARTA INSTRUMENTER LOADER
-    // Reference: https://github.com/ColCh/isparta-instrumenter-loader
-    // Instrument JS files with Isparta for subsequent code coverage reporting
-    // Skips node_modules and spec files
-    if(TEST) {
-        config.module.preLoaders.push({
-            //delays coverage til after tests are run, fixing transpiled source coverage error
-            test: /\.js$/,
-            exclude: /(node_modules|spec\.js|mock\.js)/,
-            loader: 'isparta-instrumenter',
-            query: {
-                babel: {
-                    // optional: ['runtime', 'es7.classProperties', 'es7.decorators']
-                }
-            }
-        });
-    }
 
+    //TODO: TS Instrumenter
 
     /**
      * PostCSS

@@ -1,11 +1,12 @@
 language: node_js
+sudo: yes
 node_js:
   - 4.4.6
 matrix:
   fast_finish: true
-  allow_failures:
-    - node_js: 4.4.6
 before_script:
   - npm install -g gulp-cli
   - npm install
 services: mongodb
+script:
+  - npm test

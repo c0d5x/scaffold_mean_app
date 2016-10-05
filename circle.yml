@@ -4,11 +4,7 @@ machine:
 dependencies:
   pre:
     - npm install -g gulp-cli
-    - npm install -g mocha-junit-reporter
     - npm install
 test:
   override:
     - npm test
-    - mocha test --reporter mocha-junit-reporter:
-        environment:
-          MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml

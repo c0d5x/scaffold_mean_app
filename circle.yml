@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6.7.0
+    version: latest
 dependencies:
   pre:
     - npm prune

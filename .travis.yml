@@ -1,7 +1,7 @@
 language: node_js
 sudo: yes
 node_js:
-  - 6.7.0
+  - latest
 matrix:
   fast_finish: true
 before_script:

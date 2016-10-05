@@ -5,7 +5,7 @@ dependencies:
   pre:
     - npm prune
     - npm install -g gulp-cli
-    - npm install
+    - npm install --no-optional
 test:
   override:
     - npm test

@@ -6,6 +6,7 @@ dependencies:
     - npm prune
     - npm install -g npm@latest
     - npm install -g gulp-cli
+    - gulp build
     - npm install --no-optional
 test:
   override:

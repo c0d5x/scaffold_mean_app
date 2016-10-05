@@ -5,6 +5,7 @@ node_js:
 matrix:
   fast_finish: true
 before_script:
+  - npm prune
   - npm install -g gulp-cli
   - npm install
 services: mongodb

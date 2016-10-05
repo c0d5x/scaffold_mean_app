@@ -3,6 +3,7 @@ machine:
     version: 6.7.0
 dependencies:
   pre:
+    - npm prune
     - npm install -g gulp-cli
     - npm install
 test:

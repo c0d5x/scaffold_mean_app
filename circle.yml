@@ -3,6 +3,7 @@ machine:
     version: 6.7.0
 dependencies:
   pre:
+    - rm -rf node_modules
     - npm install -g npm@latest
     - npm rebuild node-sass
     - npm install --no-optional

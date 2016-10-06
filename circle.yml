@@ -3,11 +3,9 @@ machine:
     version: 6.7.0
 dependencies:
   pre:
-    - npm prune
+    - rm -rf node_modules
     - npm install -g npm@latest
-    - npm install -g gulp-cli
     - npm rebuild node-sass
-    - gulp build
     - npm install --no-optional
 test:
   override:

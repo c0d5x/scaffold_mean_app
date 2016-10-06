@@ -2,13 +2,9 @@ language: node_js
 sudo: yes
 node_js:
   - 6.7.0
-matrix:
-  fast_finish: true
 before_script:
-  - npm prune
-  - npm install -g npm@latest
-  - npm install -g gulp-cli
-  - gulp build
+  - rm -rf node_modules
+install:
   - npm install --no-optional
 services: mongodb
 script:

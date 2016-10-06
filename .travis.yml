@@ -2,12 +2,12 @@ language: node_js
 sudo: yes
 node_js:
   - 6.7.0
-matrix:
-  fast_finish: true
 before_script:
   - rm -rf node_modules
   - npm install -g npm@latest
   - npm rebuild node-sass
+  - npm install --no-optional
+install:
   - npm install --no-optional
 services: mongodb
 script:

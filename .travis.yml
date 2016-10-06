@@ -4,6 +4,7 @@ node_js:
   - 6.7.0
 before_script:
   - rm -rf node_modules
+  - npm install iltorb
 install:
   - npm install --no-optional
 services: mongodb

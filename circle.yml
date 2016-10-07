@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6.7.0
+    version: 4.4.6
 dependencies:
   pre:
     - rm -rf node_modules

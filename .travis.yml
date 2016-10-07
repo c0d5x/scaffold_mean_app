@@ -1,7 +1,7 @@
 language: node_js
 sudo: yes
 node_js:
-  - 6.7.0
+  - 4.4.6
 before_script:
   - rm -rf node_modules
   - npm install iltorb

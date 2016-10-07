@@ -152,8 +152,8 @@
     "typings": "^0.8.1"
   },
   "engines": {
-    "node": "^6.2.2",
-    "npm": "^3.10.7"
+    "node": "4.4.6",
+    "npm": "3.10.8"
   },
   "scripts": {
     "test": "gulp test",

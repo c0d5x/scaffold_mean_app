@@ -5,9 +5,7 @@ node_js:
 before_script:
   - apt-get install -y build-essential
   - rm -rf node_modules
-  - npm install -g npm@latest
-  - npm rebuild node-sass
-  - npm install --no-optional
+  - npm install iltorb
 install:
   - npm install --no-optional
 services: mongodb

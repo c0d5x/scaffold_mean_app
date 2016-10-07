@@ -8,16 +8,10 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-      - gcc-4.8
-      - clang
 before_install:
   - rm -rf node_modules
-    #   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-    #  - sudo apt-get update -q
-    #  - sudo apt-get install gcc-4.8 g++-4.8 -y
 env:
   - CXX="g++-4.8"
-  - CC="gcc-4.8"
 install:
   - npm install --no-optional
 services: mongodb

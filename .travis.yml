@@ -6,7 +6,12 @@ before_script:
   - rm -rf node_modules
   - npm install iltorb
 before_install:
+  - add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - apt-get -qq update
+  - apt-get -qq install g++-4.8
   - npm install -g npm@3.10.8
+env:
+  - CXX=gcc++-4.8
 install:
   - npm install --no-optional
 services: mongodb

@@ -4,7 +4,7 @@ machine:
 dependencies:
   pre:
     - rm -rf node_modules
-    - npm install -g npm@latest
+    - npm install -g npm@3.10.8
     - npm rebuild node-sass
     - npm install --no-optional
 test:

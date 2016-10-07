@@ -3,9 +3,10 @@ sudo: yes
 node_js:
   - 6.7.0
 before_script:
-  - apt-get install -y build-essential
   - rm -rf node_modules
   - npm install iltorb
+before_install:
+  - npm install -g npm@3.10.8
 install:
   - npm install --no-optional
 services: mongodb

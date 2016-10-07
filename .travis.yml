@@ -4,6 +4,11 @@ node_js:
   - 4.4.6
 before_install:
   - rm -rf node_modules
+  - echo "yes" | add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - apt-get -y update -qq
+  - apt-get -y install -qq g++-4.8
+  - update-alternatives --install /usr/bin/g++ /usr/bin/g++-4.8 90
+  - apt-get install -y libstdc++-4.8-dev
 env:
   - CXX="gcc++-4.8"
   - CC="gcc-4.8"

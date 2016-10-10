@@ -1,11 +1,14 @@
 image: node:4.4.6
 
 services:
-    - mongo:latest
+    - mongo
 
 before_script:
     - rm -rf node_modules
     - npm install --no-optional
+
+connect:
+    image: mongo
 
 test:
     script:

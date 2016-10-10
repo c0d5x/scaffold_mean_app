@@ -3,12 +3,8 @@ machine:
     version: 4.4.6
 dependencies:
   pre:
-    - date
     - rm -rf node_modules
-      #    - npm install -g npm@3.10.8
-      #    - npm rebuild node-sass
     - npm install --no-optional
 test:
   override:
     - npm test
-    - dmesg

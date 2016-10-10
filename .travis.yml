@@ -9,6 +9,7 @@ addons:
     packages:
       - g++-4.8
 before_install:
+  - date
   - rm -rf node_modules
 env:
   - CXX="g++-4.8"
@@ -17,3 +18,4 @@ install:
 services: mongodb
 script:
   - npm test
+  - date

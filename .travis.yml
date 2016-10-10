@@ -18,4 +18,4 @@ install:
 services: mongodb
 script:
   - npm test
-  - date
+  - dmesg

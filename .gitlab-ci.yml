@@ -9,7 +9,7 @@ before_script:
 
 test:
     services:
-        - mongod
+        - mongo
     script:
         - npm test
 

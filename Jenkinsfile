@@ -6,7 +6,7 @@ node() {
         env.NODE_ENV = 'test'
         sh 'rm -rf node_modules'
         sh 'source ~/.nvm/nvm.sh && nvm install 4.4.6'
-        sh 'install --no-optional'
+        sh 'npm install --no-optional'
 
     stage 'Test'
         env.NODE_ENV = 'test'

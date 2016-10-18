@@ -1,3 +1,0 @@
-[runners.mongo]
-  image = "mongo"
-  services = ["mongo"]

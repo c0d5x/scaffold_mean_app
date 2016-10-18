@@ -1,8 +1,5 @@
 image: node:4.4.6
 
-# services:
-#    - mongo
-
 before_script:
     - rm -rf node_modules
     - npm install --no-optional
@@ -13,9 +10,6 @@ test:
     script:
         - npm test
 
-#test:
-#    image: mongo
-#    script:
-#        - mongod
-#    script:
-#        - mongod
+build:
+    script:
+        - gulp build

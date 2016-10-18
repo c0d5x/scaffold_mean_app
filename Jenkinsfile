@@ -10,4 +10,7 @@ node() {
     stage 'Test'
         env.NODE_ENV = 'test'
         sh 'npm test'
+
+    stage 'Build'
+        sh 'gulp build'
 }

@@ -77,6 +77,9 @@
     "gulp-eslint": "^2.0.0",
     "gulp-imagemin": "^3.0.1",
     "imagemin-gifsicle": "^5.0.0",
+    "imagemin-jpegtran": "^5.0.0",
+    "imagemin-optipng": "^5.1.0",
+    "imagemin-svgo": "^5.1.0"
     "gulp-inject": "^4.0.0",
     "gulp-istanbul": "^1.1.1",
     "gulp-istanbul-enforcer": "^1.0.3",

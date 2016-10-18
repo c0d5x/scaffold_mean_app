@@ -12,5 +12,5 @@ node() {
         sh 'npm test'
 
     stage 'Build'
-        sh 'gulp build'
+        sh './node_modules/.bin/gulp build'
 }

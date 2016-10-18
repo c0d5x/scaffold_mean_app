@@ -8,6 +8,5 @@ dependencies:
 test:
   override:
     - npm test
-build:
-  override:
+  post:
     - gulp build

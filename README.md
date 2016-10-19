@@ -57,11 +57,18 @@ CircleCI provides many services out of the box, bounded to localhost, the list i
 ### UI/UX
 
 #### Main Window
-The main page is informative, showing a list of the latest builds with the commit message, time ago and time it took. 
+The main page is informative, showing a list of the latest builds with the commit message, time ago and time it took.
+ 
 ![](doc/circle-main.jpg)
 
-This page is responsive but in my opinion it doesn't adapt well enough when the width is reduce because the repository list is kept at the same width occupying empty space.
+This page is responsive but in my opinion it doesn't adapt well enough when the width is reduced because the repository list is kept at the same width occupying empty space below the repo name.
+
 ![](doc/circle-main-reduced.jpg)
+
+#### Build Window
+Each command is captured in a panel that is collapsed once the command has completed. Scrolling to the bottom of the page will keep it autoscrolling.
+![](doc/circle-build.jpg)
+
 
 #### ANSI Support
 CircleCI correctly supports ANSI codes for different colors.
@@ -69,4 +76,47 @@ CircleCI correctly supports ANSI codes for different colors.
 #### Mobile
 The same responsive view is shown on mobile devices, which doesn't use space appropriately.
 
-#### Status Updates
+**UI/UX Rating: 8**
+
+#### Pricing
+1. Free for 1 job, 1 container
+2. $150 for 4 containers
+3. $350 for 8 containers
+
+
+## Travis CI
+
+### Initial Setup
+The first thing to learn about TravisCI is that there are two sites: [Travis-CI.com](https://travis-ci.com/) for enterprise clients and [Travis-CI.org](https://travis-ci.org/) for open source projects. Next a big delay was to find out that Travis comes with a really old C++ compiler that doesn't support [C++11](https://en.wikipedia.org/wiki/C%2B%2B11). This is important because `nodejs` and many other languages compile libraries/gems using C++, so you will get strange errors that don't seem to relate to your code. Considering that, you will add a file called [.travis.yml](https://github.com/c0d5x/scaffold_mean_app/blob/master/.travis.yml) to your repo and Travis will start triggering builds when code is commited to Github.
+**Rating: 7**
+
+### Services
+Services in Travis work similar to CircleCI with the exception that in Travis these are not started by default, so you need to specify which services you want load from this list: `MySQL, Postgres, MariaDB, MongoDB, CouchDB, RabbitMQ, memcached, Redis, Cassandra, Neo4j, ElasticSearch, RethinkDB`, etc, and for each of these Travis support a number of versions.
+**Rating: 10**
+
+### Performance
+
+The time shown here includes installing a new compiler as noted above.
+
+|Iteration|1|2|3|4|5|6|7|8|9|10|Average|
+|---------|:-:||||||||||------:|
+||1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
+
+### UI/UX
+
+#### Main Page
+The main page shows the latest build so which is very useful. As CircleCI it shows time ago, commit message and commit id, but also a link to compare the last changes which is very useful too.
+![](doc/travis-main.jpg)
+
+The same view adapts correctly when reduced in width:
+![](doc/travis-main-reduced.jpg)
+
+It has autoscrolling and refreshes nicely.
+
+#### ANSI Support
+Travis CI does support ANSI codes.
+
+#### Mobile
+The responsive view adapts correctly on mobile devices.
+
+**UI/UX Rating: 10**

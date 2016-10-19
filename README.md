@@ -51,9 +51,9 @@ CircleCI provides many services out of the box, bounded to localhost, the list i
 
 ### Performance
 
-|Iteration|1|2|3|4|5|6|7|8|9|10|Average|
-|---------|:-:||||||||||------:|
-||1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
+| Iteration | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Average |
+|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|------:|
+| |1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
 
 ### UI/UX
 
@@ -100,9 +100,9 @@ Services in Travis work similar to CircleCI with the exception that in Travis th
 
 The time shown here includes installing a new compiler as noted above.
 
-|Iteration|1|2|3|4|5|6|7|8|9|10|Average|
-|---------|:-:||||||||||------:|
-||1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
+| Iteration | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Average |
+|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|------:|
+| |1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
 
 
 ### UI/UX

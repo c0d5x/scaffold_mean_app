@@ -21,7 +21,7 @@ The following aspects are evaluated on each system:
 4. **UI/UX**: Satisfaction in the opinion of the author
 5. **Pricing** (although evaluation used free offerings only)
 
-Each system is going to be configured so that builds are triggered when changes are commited, then performance and UI/UX is evaluated. Ten iterations will be considered to get the average performance without changing the code.
+Each system is going to be configured so that builds are triggered when changes are committed, then performance and UI/UX is evaluated. Ten iterations will be considered to get the average performance without changing the code.
 
 ## Test Program
 These operations are considered as standard to build the application:
@@ -55,5 +55,18 @@ CircleCI provides many services out of the box, bounded to localhost, the list i
 ||1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
 
 ### UI/UX
+
+#### Main Window
+The main page is informative, showing a list of the latest builds with the commit message, time ago and time it took. 
+![](doc/circle-main.jpg)
+
+This page is responsive but in my opinion it doesn't adapt well enough when the width is reduce because the repository list is kept at the same width occupying empty space.
+![](doc/circle-main-reduced.jpg)
+
 #### ANSI Support
 CircleCI correctly supports ANSI codes for different colors.
+
+#### Mobile
+The same responsive view is shown on mobile devices, which doesn't use space appropriately.
+
+#### Status Updates

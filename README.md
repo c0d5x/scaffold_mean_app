@@ -82,14 +82,14 @@ The same responsive view is shown on mobile devices, which doesn't use space app
 
 #### Pricing
 1. Free for 1 job, 1 container
-2. $150 for 4 containers
-3. $350 for 8 containers
+2. $150/m for 4 containers
+3. $350/m for 8 containers
 
 
 ## Travis CI
 
 ### Initial Setup
-The first thing to learn about TravisCI is that there are two sites: [Travis-CI.com](https://travis-ci.com/) for enterprise clients and [Travis-CI.org](https://travis-ci.org/) for open source projects. Next a big delay was to find out that Travis comes with a really old C++ compiler that doesn't support [C++11](https://en.wikipedia.org/wiki/C%2B%2B11). This is important because `nodejs` and many other languages compile libraries/gems using C++, so you will get strange errors that don't seem to relate to your code. Considering that, you will add a file called [.travis.yml](https://github.com/c0d5x/scaffold_mean_app/blob/master/.travis.yml) to your repo and Travis will start triggering builds when code is commited to Github.
+The first thing to learn about TravisCI is that there are two sites: [Travis-CI.com](https://travis-ci.com/) for enterprise clients and [Travis-CI.org](https://travis-ci.org/) for open source projects. Next a big delay was to find out that Travis comes with a really old C++ compiler that doesn't support [C++11](https://en.wikipedia.org/wiki/C%2B%2B11). This is important because `nodejs` and many other languages compile libraries/gems using C++, so you will get strange errors that don't seem to relate to your code. Considering that, you will add a file called [.travis.yml](https://github.com/c0d5x/scaffold_mean_app/blob/master/.travis.yml) to your repo and Travis will start triggering builds when code is commited to Github. There is [good documentation](https://docs.travis-ci.com/) and community base.
 **Rating: 7**
 
 ### Services
@@ -125,3 +125,26 @@ Travis CI does support ANSI codes.
 The responsive view adapts correctly on mobile devices.
 
 **UI/UX Rating: 10**
+
+### Pricing
+1. Free for open source projects
+2. $129/m for 2 concurrent builds
+3. $249/m for 5 concurrent builds
+4. $489/m for 10 concurrent builds
+
+## Code Ship
+
+### Initial Setup
+To start a project you need to authorize CodeShip against Github and then manually write the repository URI, which is very disapointing. Also you have to write the commands required to build your project in their interface. This is a huge disadvange because your code will be detached with the build steps, so if you need to change the nodejs version, or add one step you have to do it on CodeShip's interface and not your repository's code.
+**Rating: 7**
+
+### Services
+
+
+
+### Performance
+
+| Iteration | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Average |
+|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|------:|
+| |1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
+### UI/UX

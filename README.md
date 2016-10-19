@@ -50,6 +50,7 @@ CircleCI provides many services out of the box, bounded to localhost, the list i
 **Rating: 10**
 
 ### Performance
+
 |Iteration|1|2|3|4|5|6|7|8|9|10|Average|
 |---------|:-:||||||||||------:|
 ||1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
@@ -67,6 +68,7 @@ This page is responsive but in my opinion it doesn't adapt well enough when the 
 
 #### Build Window
 Each command is captured in a panel that is collapsed once the command has completed. Scrolling to the bottom of the page will keep it autoscrolling.
+
 ![](doc/circle-build.jpg)
 
 
@@ -102,13 +104,16 @@ The time shown here includes installing a new compiler as noted above.
 |---------|:-:||||||||||------:|
 ||1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
 
+
 ### UI/UX
 
 #### Main Page
 The main page shows the latest build so which is very useful. As CircleCI it shows time ago, commit message and commit id, but also a link to compare the last changes which is very useful too.
+
 ![](doc/travis-main.jpg)
 
 The same view adapts correctly when reduced in width:
+
 ![](doc/travis-main-reduced.jpg)
 
 It has autoscrolling and refreshes nicely.

@@ -23,6 +23,18 @@ The following aspects are evaluated on each system:
 
 Each system is going to be configured so that builds are triggered when changes are committed, then performance and UI/UX is evaluated. Ten iterations will be considered to get the average performance without changing the code.
 
+
+## Results Table
+
+|System|Initial Setup|Services|Performance|UI/UX|Pricing|
+|:----:|:----:|:----:|:----:|:----:|:----:|
+|**TravisCI**|8|10|6:44|**10**|$129/m for 2 concurrent builds, $249/m for 5 concurrent builds, $489/m for 10 concurrent builds|
+|**CircleCI**|**10**|10|8:56|8|$150/m for 4 containers, $350/m for 8 containers|
+|**CodeShip**|7|8|**6:31**|7.5|$49/m for 1 concurrent build, 2 test pipelines. $99/m for 2 concurrent builds, 2 test pipelines. $199/m for 3 concurrent builds, 3 test pipelines|
+|**Jenkins**|7|7|**2:44**|7|**$37/m for a `t2.medium` AWS Instance**|
+
+
+
 ## Test Program
 These operations are considered as standard to build the application:
 
@@ -53,7 +65,7 @@ CircleCI provides many services out of the box, bounded to localhost, the list i
 
 | Iteration | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Average |
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|------:|
-| |1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
+| |9:19|8:48|8:18|8:50|9:17|9:32|9:02|8:58|8:15|9:06|**8:56**|
 
 ### UI/UX
 
@@ -102,7 +114,7 @@ The time shown here includes installing a new compiler as noted above.
 
 | Iteration | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Average |
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|------:|
-| |1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
+| |6:33|7:05|7:05|6:53|6:15|6:29|6:44|6:49|6:47|6:44|**6:44**|
 
 
 ### UI/UX
@@ -139,12 +151,81 @@ To start a project you need to authorize CodeShip against Github and then manual
 **Rating: 7**
 
 ### Services
-
+CodeShip does provide `Cassandra, MongoDB, MySQL, Postgres, RethinkDB, ElasticSearch, Memcached, RabbitMQ, Redis`. Some of this require setup, other like Mongo don't require any configuration.
+**Rating: 8**
 
 
 ### Performance
 
 | Iteration | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Average |
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|------:|
-| |1.1|1.2|1.3|1.4|1.5|1.6|1.7|1.8|1.9|2.0|**1.5**|
+| |6:17|6:18|6:08|6:13|6:39|6:31|7:51|6:46|6:13|6:19|**6:31**|
+
 ### UI/UX
+
+#### Main Window
+
+The project has to be selected from the top of the page, and then you see a list of the latest builds. It shows time ago, commit id and commit message. 
+
+![](doc/codeship-main.jpg)
+
+#### Build Window
+
+CodeShip collapses the output of the build by commands similar to how CircleCI does it. 
+
+![](doc/codeship-build.jpg)
+
+**UI/UX Rating: 7.5**
+
+### Pricing
+1. Free for 1 concurrent build
+2. $49/m for 1 concurrent build, 2 test pipelines
+3. $99/m for 2 concurrent builds, 2 test pipelines
+4. $199/m for 3 concurrent builds, 3 test pipelines
+
+## Jenkins
+
+### Initial Setup
+
+Starting from scratch with Jenkins may be the worst option for a development group without sysadmin experience, but at the same time it can be totally viable and desirable option for a group with sysadmin experience due to the hability to customice the service, integrate it with slack or other services, and get better performance over the hosted offerings. It is worth to mention that Jenkins 2.x comes with a wizard that facilitates the setup.
+
+Besides installing Jenkins 2.x in this case I also had to install [nvm](https://github.com/creationix/nvm), development tools and libraries (depending on your OS) and a few Jenkins plugins.
+
+Once the setup is ready, you have to add a [Jenkinsfile](https://github.com/c0d5x/scaffold_mean_app/blob/master/Jenkinsfile) to your repository that describes the process to test/build the application.
+**Rating: 7**
+
+### Services
+
+You have to manually install services you want to consume, this has to be considered when setting the specs of your server, because Jenkins requires memory and disk depending on your use, and that adds up with the memory, disk and cpu required by the different services.
+**Rating: 7**
+
+### Performance
+
+| Iteration | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Average |
+|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|------:|
+| |3:42|3:10|2:58|2:44|2:36|2:30|2:26|2:25|2:30|2:26|**2:44**|
+
+### UI/UX
+
+#### Main Window
+
+Jenkins provides good navigation between builds but it doesn't show details like commit message or id in it's main window, which I find unfavorable. There are useful things from this window, like showing the trend above the build history listing, or the ovewview of changes in your repo with the corresponding build.
+
+![](doc/jenkins-main.jpg) 
+
+#### Trend Window
+
+![](doc/jenkins-trend.jpg)
+
+#### Recent Changes
+
+![](doc/jenkins-changes.jpg)
+
+Jenkins's advantage is that you can customize it to fit your needs, but the default configurations are being evaluated in this case. 
+
+**UI/UX Rating: 7**
+
+#### Pricing
+For this exercise a `t2.medium` instance in AWS was used. `t2.micro` could not support Jenkins and Mongo running on the same host, and `t2.medium` performed better than the hosted services since those offer containers with shared resources.
+
+1. $37/m for `t2.medium` instance in AWS

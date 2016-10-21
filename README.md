@@ -132,7 +132,7 @@ The time shown here includes installing a new compiler as noted above.
 ### UI/UX
 
 #### Main Page
-The main page shows the latest build so which is very useful. As CircleCI it shows time ago, commit message and commit id, but also a link to compare the last changes which is very useful too.
+The main page shows the latest build which is very useful. As CircleCI it shows time ago, commit message and commit id, but also a link to compare the last changes which is very useful too.
 
 ![](doc/travis-main.jpg)
 
@@ -221,7 +221,7 @@ You have to manually install services you want to consume, this has to be consid
 
 #### Main Window
 
-Jenkins provides good navigation between builds but it doesn't show details like commit message or id in it's main window, which I find unfavorable. There are useful things from this window, like showing the trend above the build history listing, or the ovewview of changes in your repo with the corresponding build.
+Jenkins provides good navigation between builds but it doesn't show details like commit message or id in it's main window, which I find unfavorable. There are useful things from this window, like showing the trend above the build history listing, or the overview of changes in your repo with the corresponding build.
 
 ![](doc/jenkins-main.jpg) 
 
@@ -232,6 +232,9 @@ Jenkins provides good navigation between builds but it doesn't show details like
 #### Recent Changes
 
 ![](doc/jenkins-changes.jpg)
+
+#### ANSI
+Jenkins does not support ANSI codes by default, which is very disappointing. There is a plugin you can configure but this is a feature that should be already part of the base system.
 
 Jenkins's advantage is that you can customize it to fit your needs, but the default configurations are being evaluated in this case. 
 

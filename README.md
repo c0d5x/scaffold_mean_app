@@ -2,7 +2,7 @@
 
 ## Abstract
 The idea for this document is to help you decide which of these four Continuous Integration systems to use depending on
-your priorities, using an scaffold application created with [a
+your priorities, using an [scaffold application](https://github.com/c0d5x/scaffold_mean_app/) created with [a
 generator](https://github.com/DaftMonk/generator-angular-fullstack). The application uses `nodejs 4.4.6`, `npm`, `gulp`
 and connects to `mongod`. This document does not cover the delivery process.
 
@@ -33,14 +33,26 @@ Each system is going to be configured so that builds are triggered when changes 
 |**CodeShip**|7|8|**6:31**|7.5|$49/m for 1 concurrent build, 2 test pipelines. $99/m for 2 concurrent builds, 2 test pipelines. $199/m for 3 concurrent builds, 3 test pipelines|
 |**Jenkins**|7|7|**2:44**|7|**$37/m for a `t2.medium` AWS Instance**|
 
+* `Gitlab` was initially considered but this comparison but it was removed due to the complexity to configure additional services like DB.
+* `AWS CodePipeline` is not included in this evaluation because it is not a CI tool but more a CD framework.
 
+## Interpretation of Results
+There is clear winner in terms of performance due to the fact that all hosted solutions offer containers. The difference is significant considering the price is much lower than the hosted solutions, this is at the cost of course of some dedication to configure the service and maintain it internally.
+
+CircleCI is a very good option if you are not concerned about performance, but it is clear that they tax more their servers with more containers per CPU. Besides that it offer great UI and availability of services. 
+
+My personal best (excluding Jenkins) is TravisCI, because it provides a very useful UI, availability of services but also it is very well documented and used. Also you can have any number of tests, configured and only pay for 2 concurrent.
+
+**Conclusion**
+If you have internal resources that can setup and maintain it, go with Jenkins. If not check TravisCI first, and then CircleCI second.
 
 ## Test Program
-These operations are considered as standard to build the application:
+These operations are considered as standard to build a MEAN application:
 
 ### Preparation
 1. rm -rf node_modules
 2. npm install --no-optional
+
 
 ### Unit Testing
 1. npm test

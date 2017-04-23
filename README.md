@@ -244,3 +244,5 @@ Jenkins's advantage is that you can customize it to fit your needs, but the defa
 For this exercise a `t2.medium` instance in AWS was used. `t2.micro` could not support Jenkins and Mongo running on the same host, and `t2.medium` performed better than the hosted services since those offer containers with shared resources.
 
 1. $37/m for `t2.medium` instance in AWS
+
+Bump
